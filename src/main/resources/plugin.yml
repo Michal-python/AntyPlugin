@@ -1,0 +1,5 @@
+name: AntyPlugin
+version: ${project.version}
+main: me.michal.ap.Main
+api-version: 1.16
+authors: [ TheMichalPL ]
