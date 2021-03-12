@@ -17,67 +17,27 @@ public class PlayerCommandPreprocess implements Listener {
     public void onCommand(PlayerCommandPreprocessEvent e) {
         Player p = e.getPlayer();
         String wiadomosc = "&cKomenda zablokowana";
-        if(e.getMessage().contains("/pl")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/bukkit:pl")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/help")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/?")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/bukkit:help")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/bukkit:?")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        }  else if(e.getMessage().contains("/bukkit:ver")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/ver")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().equalsIgnoreCase("/bukkit:rl")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/rl")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/bukkit:reload")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().equalsIgnoreCase("/reload")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/about")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        }
-        else if(e.getMessage().contains("/bukkit:about")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
-        } else if(e.getMessage().contains("/bukkit:pl")) {
-            e.setCancelled(true);
-            e.getPlayer().sendMessage(Main.chat(wiadomosc));
-            wyslijdohelpopa(p, e);
+        List<String> bl = new ArrayList<>();
+        bl.add("/pl");
+        bl.add("/bukkit:pl");
+        bl.add("/help");
+        bl.add("/?");
+        bl.add("/bukkit:help");
+        bl.add("/bukkit:?");
+        bl.add("/bukkit:ver");
+        bl.add("/ver");
+        bl.add("/rl");
+        bl.add("/reload");
+        bl.add("/bukkit:reload");
+        bl.add("/bukkit:rl");
+        bl.add("/about");
+        bl.add("/bukkit:about");
+        for(String s : b;) {
+            if(e.getMessage().contains(s)) {
+                e.setCancelled(true);
+                e.getPlayer().sendMessage(Main.chat(wiadomosc));
+                wyslijdohelpopa(p, e);
+            }
         }
     }
 
